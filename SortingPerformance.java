@@ -5,12 +5,12 @@ class SortingPerformance {
         Room[] allData = RoomIO.read("data/airbnb.txt", 128000, true);
 
         // Make a new file with random data
-        RoomIO.write("data/random.txt", allData);
+        RoomIO.write("data/Random.txt", allData);
 
         // Order data ascending and make a new file named "ascending.txt"
         QuickSort sorter = new QuickSort();
         sorter.sort(allData, 0, allData.length - 1);
-        RoomIO.write("data/ascending.txt", allData);
+        RoomIO.write("data/Ascending.txt", allData);
 
         // Order data descending and make a new file named "descending.txt"
         int size = allData.length - 1;
@@ -19,7 +19,7 @@ class SortingPerformance {
         for(int i = 0; i <= size; i++)
             descData[i] = allData[size - i];
 
-        RoomIO.write("data/descending.txt", descData);
+        RoomIO.write("data/Descending.txt", descData);
         
     }
 
@@ -29,7 +29,7 @@ class SortingPerformance {
         for(int i = 0; i < orderValues.length - 1; i++) {
             // Execute sorting for each line limit and file
 
-            String[] fileName = {"random.txt", "ascending.txt", "descending.txt"};
+            String[] fileName = {"Random.txt", "Ascending.txt", "Descending.txt"};
             
             // Bubble Sort
             SecondStepRunner.bubbleSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);

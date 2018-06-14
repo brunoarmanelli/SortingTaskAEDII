@@ -11,7 +11,7 @@ class StatsIO {
         String[] sortingTypes = {"Random", "Ascending", "Descending"};
         String[] sortingMethods = {"BubbleSort", "InsertionSort", "MergeSort", "PatrunoSort", "QuickSort", "SelectionSort"};
 
-        try (FileWriter fileWriter = new FileWriter("results/" + sortingMethods[results.sortingMethod] + ".txt", true)) {
+        try (FileWriter fileWriter = new FileWriter("results/" + sortingMethods[results.sortingMethod] + sortingTypes[results.typeSorting] + ".txt", true)) {
             PrintWriter printWriter = new PrintWriter(fileWriter);
 
             printWriter.print(sortingTypes[results.typeSorting] + "\t");
