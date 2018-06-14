@@ -1,4 +1,17 @@
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 class SortingPerformance {
+
+    public static final String RESULTS_FOLDER = getTime();
+
+    public static String getTime() {
+        Date now = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH-mm-ss");
+        String time = dateFormat.format(now);
+        return time;
+    }
 
     public static void firstStep(String fileName) {
         // Read all lines from first file
@@ -52,9 +65,9 @@ class SortingPerformance {
             SecondStepRunner.patrunoSortDesc(orderValues[i], path + fileName[2]);
 
             // Quick Sort
-            SecondStepRunner.quickSortRandom(orderValues[i], path + fileName[0]);
-            SecondStepRunner.quickSortAsc(orderValues[i], path + fileName[1]);
-            SecondStepRunner.quickSortDesc(orderValues[i], path + fileName[2]);
+            // SecondStepRunner.quickSortRandom(orderValues[i], path + fileName[0]);
+            // SecondStepRunner.quickSortAsc(orderValues[i], path + fileName[1]);
+            // SecondStepRunner.quickSortDesc(orderValues[i], path + fileName[2]);
 
             // Selection Sort
             SecondStepRunner.selectionSortRandom(orderValues[i], path + fileName[0]);
@@ -67,6 +80,9 @@ class SortingPerformance {
 
         // Initial Step
         firstStep("data/airbnb.txt");
+
+        // Prepare directory
+        new File("results/" + RESULTS_FOLDER).mkdirs();
 
         // Second Step
         secondStep("data/");
