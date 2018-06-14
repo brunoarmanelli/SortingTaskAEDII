@@ -28,24 +28,26 @@ class SortingPerformance {
         
         for(int i = 0; i < orderValues.length - 1; i++) {
             // Execute sorting for each line limit and file
+
+            String[] fileName = {"random.txt", "ascending.txt", "descending.txt"};
             
             // Bubble Sort
-            SecondStepRunner.bubbleSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+            SecondStepRunner.bubbleSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
 
             // Insertion Sort
-            SecondStepRunner.insertionSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+            SecondStepRunner.insertionSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
 
             // Merge Sort
-            SecondStepRunner.mergeSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+            SecondStepRunner.mergeSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
 
             // Patruno Sort
-            SecondStepRunner.patrunoSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+            SecondStepRunner.patrunoSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
 
             // Quick Sort
-            SecondStepRunner.quickSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+            SecondStepRunner.quickSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
             
             // Selection Sort
-            SecondStepRunner.selectionSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+            SecondStepRunner.selectionSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
         }
     }
 
