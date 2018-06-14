@@ -43,7 +43,46 @@ class SecondStepRunner {
     }
 
     public static void insertionSort(int lineLimit, String randomFile, String ascFile, String descFile) {
+        // Insertion Sort Random
+        Counter insertionRandomCounter = new Counter(1, 0, lineLimit);
 
+        long insertionStartTime = System.currentTimeMillis();
+        InsertionSort insertionRandom = new InsertionSort();
+        insertionRandom.sort(RoomIO.read(randomFile, lineLimit, false), insertionRandomCounter);
+        long insertionEndTime = System.currentTimeMillis();
+        long insertionElapsedTimeRandom = insertionEndTime - insertionStartTime;
+
+        insertionRandomCounter.time = insertionElapsedTimeRandom;
+        StatsIO.write(insertionRandomCounter); // Save data in file
+
+        // Insertion Sort Ascending
+        Counter insertionAscCounter = new Counter(1, 1, lineLimit);
+
+        insertionStartTime = System.currentTimeMillis();
+        InsertionSort insertionAsc = new InsertionSort();
+        insertionAsc.sort(RoomIO.read(ascFile, lineLimit, false), insertionAscCounter);
+        insertionEndTime = System.currentTimeMillis();
+        long insertionElapsedTimeAscending = insertionEndTime - insertionStartTime;
+
+        insertionAscCounter.time = insertionElapsedTimeAscending;
+        StatsIO.write(insertionAscCounter);
+
+        // Insertion Sort Descending
+        Counter insertionDescCounter = new Counter(1, 2, lineLimit);
+
+        insertionStartTime = System.currentTimeMillis();
+        InsertionSort insertionDesc = new InsertionSort();
+        insertionDesc.sort(RoomIO.read(descFile, lineLimit, false), insertionDescCounter);
+        insertionEndTime = System.currentTimeMillis();
+        long insertionElapsedTimeDescending = insertionEndTime - insertionStartTime;
+
+        insertionDescCounter.time = insertionElapsedTimeDescending;
+        StatsIO.write(insertionDescCounter);
+
+        // Print data
+        System.out.println("Insertion Sort took " + insertionElapsedTimeRandom + " ms to sort a Random Array of " + lineLimit + " elements.");
+        System.out.println("Insertion Sort took " + insertionElapsedTimeAscending + " ms to sort an Ascending Array of " + lineLimit + " elements.");
+        System.out.println("Insertion Sort took " + insertionElapsedTimeDescending + " ms to sort a Descending Array of " + lineLimit + " elements.");
     }
 
     public static void mergeSort(int lineLimit, String randomFile, String ascFile, String descFile) {
