@@ -1,11 +1,23 @@
 class QuickSort {
-      Counter quickCount = new Counter();
+      Counter counter;
 
-      public void sort(Room[] allData, int inicio, int fim) {
+      public QuickSort() {
+            this.counter = new Counter();
+      }
+
+      public QuickSort(Counter counter) {
+            this.counter = counter;
+      }
+
+      public void sort(Room[] allData) {
+            sortInside(allData, 0, allData.length - 1);
+      }
+
+      public void sortInside(Room[] allData, int inicio, int fim) {
             if (inicio < fim) {
                   int posicaoPivo = separar(allData, inicio, fim);
-                  sort(allData, inicio, posicaoPivo - 1);
-                  sort(allData, posicaoPivo + 1, fim);
+                  sortInside(allData, inicio, posicaoPivo - 1);
+                  sortInside(allData, posicaoPivo + 1, fim);
             }
       }
 
@@ -13,11 +25,15 @@ class QuickSort {
             int pivo = allData[inicio].roomID;
             int i = inicio + 1, f = fim;
             while (i <= f) {
-                  if (allData[i].roomID <= pivo)
+                  counter.comparisons++;
+                  if (allData[i].roomID <= pivo) {
                         i++;
-                  else if (pivo < allData[f].roomID)
+                  } else if (pivo < allData[f].roomID) {
+                        counter.comparisons++;
                         f--;
-                  else {
+                  } else {
+                        counter.comparisons++;
+                        counter.swaps++; // Count Swaps
                         int troca = allData[i].roomID;
                         allData[i].roomID = allData[f].roomID;
                         allData[f].roomID = troca;

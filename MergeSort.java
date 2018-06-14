@@ -1,6 +1,9 @@
 class MergeSort {
-    public void sort(Room[] allData) {
+    Counter counter;
+
+    public void sort(Room[] allData, Counter counter) {
         sortInside(allData, 0, allData.length  - 1);
+        this.counter = counter;
     }
 
     public void sortInside(Room[] allData, int l, int r) {

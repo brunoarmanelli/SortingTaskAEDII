@@ -9,7 +9,7 @@ class SortingPerformance {
 
         // Order data ascending and make a new file named "ascending.txt"
         QuickSort sorter = new QuickSort();
-        sorter.sort(allData, 0, allData.length - 1);
+        sorter.sortInside(allData, 0, allData.length - 1);
         RoomIO.write("data/Ascending.txt", allData);
 
         // Order data descending and make a new file named "descending.txt"
@@ -32,22 +32,34 @@ class SortingPerformance {
             String[] fileName = {"Random.txt", "Ascending.txt", "Descending.txt"};
             
             // Bubble Sort
-            SecondStepRunner.bubbleSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
-
+            SecondStepRunner.bubbleSortRandom(orderValues[i], path + fileName[0]);
+            SecondStepRunner.bubbleSortAsc(orderValues[i], path + fileName[1]);
+            SecondStepRunner.bubbleSortDesc(orderValues[i], path + fileName[2]);
+            
             // Insertion Sort
-            SecondStepRunner.insertionSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
+            SecondStepRunner.insertionSortRandom(orderValues[i], path + fileName[0]);
+            SecondStepRunner.insertionSortAsc(orderValues[i], path + fileName[1]);
+            SecondStepRunner.insertionSortDesc(orderValues[i], path + fileName[2]);
 
             // Merge Sort
-            SecondStepRunner.mergeSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
+            SecondStepRunner.mergeSortRandom(orderValues[i], path + fileName[0]);
+            SecondStepRunner.mergeSortAsc(orderValues[i], path + fileName[1]);
+            SecondStepRunner.mergeSortDesc(orderValues[i], path + fileName[2]);
 
             // Patruno Sort
-            SecondStepRunner.patrunoSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
+            SecondStepRunner.patrunoSortRandom(orderValues[i], path + fileName[0]);
+            SecondStepRunner.patrunoSortAsc(orderValues[i], path + fileName[1]);
+            SecondStepRunner.patrunoSortDesc(orderValues[i], path + fileName[2]);
 
             // Quick Sort
-            SecondStepRunner.quickSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
-            
+            SecondStepRunner.quickSortRandom(orderValues[i], path + fileName[0]);
+            SecondStepRunner.quickSortAsc(orderValues[i], path + fileName[1]);
+            SecondStepRunner.quickSortDesc(orderValues[i], path + fileName[2]);
+
             // Selection Sort
-            SecondStepRunner.selectionSort(orderValues[i], path + fileName[0], path + fileName[1], path + fileName[1]);
+            SecondStepRunner.selectionSortRandom(orderValues[i], path + fileName[0]);
+            SecondStepRunner.selectionSortAsc(orderValues[i], path + fileName[1]);
+            SecondStepRunner.selectionSortDesc(orderValues[i], path + fileName[2]);
         }
     }
 

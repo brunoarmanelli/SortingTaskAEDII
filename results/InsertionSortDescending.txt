@@ -1,2 +1,0 @@
-Descending	2000	0	1999	30
-Descending	4000	0	3999	13
