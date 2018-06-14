@@ -202,7 +202,7 @@ class SecondStepRunner {
 
         long quickStartTime = System.currentTimeMillis();
         QuickSort quickRandom = new QuickSort(quickRandomCounter);
-        quickRandom.sort(RoomIO.read(file, lineLimit, false));
+        quickRandom.sort(RoomIO.read(file, lineLimit, false), 0, lineLimit - 1);
         long quickEndTime = System.currentTimeMillis();
         long quickElapsedTimeRandom = quickEndTime - quickStartTime;
 
@@ -218,7 +218,7 @@ class SecondStepRunner {
 
         long quickStartTime = System.currentTimeMillis();
         QuickSort quickAsc = new QuickSort(quickAscCounter);
-        quickAsc.sort(RoomIO.read(file, lineLimit, false));
+        quickAsc.sort(RoomIO.read(file, lineLimit, false), 0, lineLimit - 1);
         long quickEndTime = System.currentTimeMillis();
         long quickElapsedTimeAsc = quickEndTime - quickStartTime;
 
@@ -234,7 +234,7 @@ class SecondStepRunner {
 
         long quickStartTime = System.currentTimeMillis();
         QuickSort quickDesc = new QuickSort(quickDescCounter);
-        quickDesc.sort(RoomIO.read(file, lineLimit, false));
+        quickDesc.sort(RoomIO.read(file, lineLimit, false), 0, lineLimit - 1);
         long quickEndTime = System.currentTimeMillis();
         long quickElapsedTimeDesc = quickEndTime - quickStartTime;
 

@@ -9,7 +9,7 @@ class SortingPerformance {
 
         // Order data ascending and make a new file named "ascending.txt"
         QuickSort sorter = new QuickSort();
-        sorter.sortInside(allData, 0, allData.length - 1);
+        sorter.sort(allData, 0, allData.length - 1);
         RoomIO.write("data/Ascending.txt", allData);
 
         // Order data descending and make a new file named "descending.txt"
