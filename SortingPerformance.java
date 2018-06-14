@@ -27,17 +27,25 @@ class SortingPerformance {
         int[] orderValues = {2000, 4000, 8000, 16000, 32000, 64000, 128000};
         
         for(int i = 0; i < orderValues.length - 1; i++) {
-
-            // Read data for each value and file
-            Room[] randomData = RoomIO.read(path + "random.txt", orderValues[i], false);
-            Room[] ascData = RoomIO.read(path + "ascending.txt", orderValues[i], false);
-            Room[] descData = RoomIO.read(path + "descending.txt", orderValues[i], false);
-
-            // Temporary values
-            Room[] tempRandom, tempAsc, tempDesc;
-
-            // Execute ordering for each algorithm and reassociate data
+            // Execute sorting for each line limit and file
             
+            // Bubble Sort
+            SecondStepRunner.bubbleSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+
+            // Insertion Sort
+            SecondStepRunner.insertionSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+
+            // Merge Sort
+            SecondStepRunner.mergeSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+
+            // Patruno Sort
+            SecondStepRunner.patrunoSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+
+            // Quick Sort
+            SecondStepRunner.quickSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
+            
+            // Selection Sort
+            SecondStepRunner.selectionSort(orderValues[i], path + "random.txt", path + "ascending.txt", path + "descending.txt");
         }
     }
 
@@ -47,6 +55,7 @@ class SortingPerformance {
         firstStep("data/airbnb.txt");
 
         // Second Step
-        firstStep("data");
+        secondStep("data/");
+
     }
 }
