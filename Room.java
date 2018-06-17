@@ -21,7 +21,6 @@ class Room {
     }
 
     public void parseLine(String line) {
-
         String[] tempData = line.split("	");
         int i = 0;
         

@@ -7,8 +7,9 @@ class SelectionSort {
             int min_idx = i;
 
             for (int j = i + 1; j < n; j++) {
+                counter.comparisons++;
                 if (allData[j].roomID < allData[min_idx].roomID) {
-                    counter.comparisons++; // Count Comparisons
+                    // Count Comparisons
                     min_idx = j;
                 }
             }

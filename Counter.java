@@ -1,7 +1,7 @@
 class Counter {
     int lineLimit;
-    int swaps;
-    int comparisons;
+    long swaps;
+    long comparisons;
     int typeSorting;
     int sortingMethod;
     long time;

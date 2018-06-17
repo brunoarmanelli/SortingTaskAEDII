@@ -25,8 +25,10 @@ class QuickSort {
                   if (allData[i].roomID <= pivo) {
                         i++;
                   } else if (pivo < allData[f].roomID) {
+                        counter.comparisons++;
                         f--;
                   } else {
+                        counter.swaps++;
                         int troca = allData[i].roomID;
                         allData[i].roomID = allData[f].roomID;
                         allData[f].roomID = troca;
