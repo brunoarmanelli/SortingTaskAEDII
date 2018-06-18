@@ -1,5 +1,6 @@
 class QuickSort {
       Counter counter;
+      long startTime, endTime;
 
       public QuickSort() {
             this.counter = new Counter();
@@ -9,11 +10,22 @@ class QuickSort {
             this.counter = counter;
       }
 
-      public void sort(Room[] allData, int inicio, int fim) {
+      public Counter sort(Room[] allData) {
+            this.startTime = System.currentTimeMillis();
+    
+            runSort(allData, 0, allData.length - 1);
+    
+            endTime = System.currentTimeMillis();
+            counter.time = endTime - startTime;
+    
+            return this.counter;
+      }
+
+      public void runSort(Room[] allData, int inicio, int fim) {
             if (inicio < fim) {
                   int posicaoPivo = separar(allData, inicio, fim);
-                  sort(allData, inicio, posicaoPivo - 1);
-                  sort(allData, posicaoPivo + 1, fim);
+                  runSort(allData, inicio, posicaoPivo - 1);
+                  runSort(allData, posicaoPivo + 1, fim);
             }
       }
 

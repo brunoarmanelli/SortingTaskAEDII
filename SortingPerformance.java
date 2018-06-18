@@ -23,7 +23,7 @@ class SortingPerformance {
 
         // Order data ascending and make a new file named "Ascending.txt"
         QuickSort sorter = new QuickSort();
-        sorter.sort(allData, 0, allData.length - 1);
+        sorter.sort(allData);
         RoomIO.write("data/Ascending.txt", allData);
 
         // Order data descending and make a new file named "Descending.txt"
@@ -43,36 +43,44 @@ class SortingPerformance {
         for(int i = 0; i < orderValues.length; i++) {
             // Execute sorting for each line limit and file
             String[] fileName = {"Random.txt", "Ascending.txt", "Descending.txt"};
-            
+
+            // 1 means Random; 2 means Ascending; 3 means Descending;
+
             // Bubble Sort
-            SecondStepRunner.bubbleSortRandom(orderValues[i], path + fileName[0]);
-            SecondStepRunner.bubbleSortAsc(orderValues[i], path + fileName[1]);
-            SecondStepRunner.bubbleSortDesc(orderValues[i], path + fileName[2]);
+            SecondStepRunner.bubbleSortTask(0, orderValues[i], path + fileName[0]);
+            SecondStepRunner.bubbleSortTask(1, orderValues[i], path + fileName[1]);
+            SecondStepRunner.bubbleSortTask(2, orderValues[i], path + fileName[2]);
+            System.out.println();
             
             // Insertion Sort
-            SecondStepRunner.insertionSortRandom(orderValues[i], path + fileName[0]);
-            SecondStepRunner.insertionSortAsc(orderValues[i], path + fileName[1]);
-            SecondStepRunner.insertionSortDesc(orderValues[i], path + fileName[2]);
+            SecondStepRunner.insertionTask(0, orderValues[i], path + fileName[0]);
+            SecondStepRunner.insertionTask(1, orderValues[i], path + fileName[1]);
+            SecondStepRunner.insertionTask(2, orderValues[i], path + fileName[2]);
+            System.out.println();
 
             // Merge Sort
-            SecondStepRunner.mergeSortRandom(orderValues[i], path + fileName[0]);
-            SecondStepRunner.mergeSortAsc(orderValues[i], path + fileName[1]);
-            SecondStepRunner.mergeSortDesc(orderValues[i], path + fileName[2]);
+            SecondStepRunner.mergeTask(0, orderValues[i], path + fileName[0]);
+            SecondStepRunner.mergeTask(1, orderValues[i], path + fileName[1]);
+            SecondStepRunner.mergeTask(2, orderValues[i], path + fileName[2]);
+            System.out.println();
 
             // Patruno Sort
-            SecondStepRunner.patrunoSortRandom(orderValues[i], path + fileName[0]);
-            SecondStepRunner.patrunoSortAsc(orderValues[i], path + fileName[1]);
-            SecondStepRunner.patrunoSortDesc(orderValues[i], path + fileName[2]);
+            SecondStepRunner.patrunoTask(0, orderValues[i], path + fileName[0]);
+            SecondStepRunner.patrunoTask(1, orderValues[i], path + fileName[1]);
+            SecondStepRunner.patrunoTask(2, orderValues[i], path + fileName[2]);
+            System.out.println();
 
             // Quick Sort
-            SecondStepRunner.quickSortRandom(orderValues[i], path + fileName[0]);
-            // SecondStepRunner.quickSortAsc(orderValues[i], path + fileName[1]);
-            // SecondStepRunner.quickSortDesc(orderValues[i], path + fileName[2]);
+            SecondStepRunner.quickTask(0, orderValues[i], path + fileName[0]);
+            SecondStepRunner.quickTask(1, orderValues[i], path + fileName[1]);
+            SecondStepRunner.quickTask(2, orderValues[i], path + fileName[2]);
+            System.out.println();
 
             // Selection Sort
-            SecondStepRunner.selectionSortRandom(orderValues[i], path + fileName[0]);
-            SecondStepRunner.selectionSortAsc(orderValues[i], path + fileName[1]);
-            SecondStepRunner.selectionSortDesc(orderValues[i], path + fileName[2]);
+            SecondStepRunner.selectionTask(0, orderValues[i], path + fileName[0]);
+            SecondStepRunner.selectionTask(1, orderValues[i], path + fileName[1]);
+            SecondStepRunner.selectionTask(2, orderValues[i], path + fileName[2]);
+            System.out.println();
         }
     }
 

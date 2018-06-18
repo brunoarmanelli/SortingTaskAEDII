@@ -11,10 +11,10 @@ class StatsIO {
         String[] sortingTypes = {"Random", "Ascending", "Descending"};
         String[] sortingMethods = {"BubbleSort", "InsertionSort", "MergeSort", "PatrunoSort", "QuickSort", "SelectionSort"};
 
-        try (FileWriter fileWriter = new FileWriter("results/" + SortingPerformance.RESULTS_FOLDER + "/" + sortingMethods[results.sortingMethod] + sortingTypes[results.typeSorting] + ".txt", true)) {
+        try (FileWriter fileWriter = new FileWriter("results/" + SortingPerformance.RESULTS_FOLDER + "/" + sortingMethods[results.sortingMethod] + sortingTypes[results.typeOfSort] + ".txt", true)) {
             PrintWriter printWriter = new PrintWriter(fileWriter);
 
-            printWriter.print(sortingTypes[results.typeSorting] + "\t");
+            printWriter.print(sortingTypes[results.typeOfSort] + "\t");
             printWriter.print(results.lineLimit + "\t");
             printWriter.print(results.swaps + "\t");
             printWriter.print(results.comparisons + "\t");

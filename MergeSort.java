@@ -1,19 +1,30 @@
 class MergeSort {
     Counter counter;
+    long startTime, endTime;
 
-    public void sort(Room[] allData, Counter counter) {
-        sortInside(allData, 0, allData.length  - 1);
+    public MergeSort(Counter counter) {
         this.counter = counter;
     }
 
-    public void sortInside(Room[] allData, int l, int r) {
+    public Counter sort(Room[] allData) {
+        this.startTime = System.currentTimeMillis();
+
+        runSort(allData, 0, allData.length  - 1);
+
+        endTime = System.currentTimeMillis();
+        counter.time = endTime - startTime;
+
+        return this.counter;
+    }
+
+    public void runSort(Room[] allData, int l, int r) {
         if (l < r) {
             // Find the middle point
             int m = (l + r) / 2;
  
             // Sort first and second halves
-            sortInside(allData, l, m);
-            sortInside(allData , m + 1, r);
+            runSort(allData, l, m);
+            runSort(allData , m + 1, r);
  
             // Merge the sorted halves
             merge(allData, l, m, r);
