@@ -13,7 +13,7 @@ class MergeSort {
 
         endTime = System.currentTimeMillis();
         counter.time = endTime - startTime;
-
+        
         return this.counter;
     }
 
@@ -62,11 +62,14 @@ class MergeSort {
                 allData[k] = R[j];
                 j++;
             }
+            this.counter.comparisons++;
+            this.counter.swaps++;
             k++;
         }
  
         /* Copy remaining elements of L[] if any */
         while (i < n1) {
+            this.counter.swaps++;
             allData[k] = L[i];
             i++;
             k++;
@@ -74,6 +77,7 @@ class MergeSort {
  
         /* Copy remaining elements of R[] if any */
         while (j < n2) {
+            this.counter.swaps++;
             allData[k] = R[j];
             j++;
             k++;

@@ -13,14 +13,27 @@ class SecondStepRunner {
     public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void printOnScreen(Counter taskCounter) {
-        System.out.println(
-            ANSI_PURPLE + "[" + taskCounter.getMethod() + "]" + ANSI_RESET + "\t" 
-            + ANSI_YELLOW + "[" + taskCounter.getType() + "]" + ANSI_RESET 
-            + "\t" + ANSI_RED + "[" + taskCounter.lineLimit + "]" + ANSI_RESET
-            + ANSI_CYAN + "\t[" + taskCounter.time + " ms]" + ANSI_RESET 
-            + ANSI_CYAN + " [" + taskCounter.swaps + " swaps]" + ANSI_RESET 
-            + ANSI_CYAN + " [" + taskCounter.comparisons + " comparisons]\t" + ANSI_RESET 
-            );
+        String osName = System.getProperty("os.name");
+
+        if(osName.contains("windows")) {
+            System.out.println(
+                "[" + taskCounter.getMethod() + "]\t" 
+                + "[" + taskCounter.getType() + "]\t"
+                + "[" + taskCounter.lineLimit + "]\t"
+                + "[" + taskCounter.time + " ms]\t"
+                + "[" + taskCounter.swaps + " swaps]\t"
+                + "[" + taskCounter.comparisons + " comparisons]\t" 
+                );
+        } else {
+            System.out.println(
+                ANSI_PURPLE + "[" + taskCounter.getMethod() + "]" + ANSI_RESET + "\t" 
+                + ANSI_YELLOW + "[" + taskCounter.getType() + "]" + ANSI_RESET 
+                + "\t" + ANSI_RED + "[" + taskCounter.lineLimit + "]" + ANSI_RESET
+                + ANSI_CYAN + "\t[" + taskCounter.time + " ms]" + ANSI_RESET 
+                + ANSI_CYAN + " [" + taskCounter.swaps + " swaps]" + ANSI_RESET 
+                + ANSI_CYAN + " [" + taskCounter.comparisons + " comparisons]\t" + ANSI_RESET 
+                );
+        }
     }
 
     public static void bubbleSortTask(int typeOfSort, int lineLimit, String file) {

@@ -10,9 +10,20 @@ class StatsIO {
 
     public static void write(Counter results) {
         // Make files for each ordering method and type of sorting order
+        File resultsFile = new File("results/" + SortingPerformance.RESULTS_FOLDER + "/" + results.getMethod() + results.getType() + ".txt");
+        Boolean resultsFileExists = resultsFile.exists();
+
         try (FileWriter fileWriter = new FileWriter("results/" + SortingPerformance.RESULTS_FOLDER + "/" + results.getMethod() + results.getType() + ".txt", true)) {
 
             PrintWriter printWriter = new PrintWriter(fileWriter);
+
+            if(!resultsFileExists) {
+                printWriter.print("SotingType\t");
+                printWriter.print("LineLimit\t");
+                printWriter.print("Swaps\t");
+                printWriter.print("Comparisons\t");
+                printWriter.print("Time" + "\n");
+            }
 
             printWriter.print(results.getType() + "\t");
             printWriter.print(results.lineLimit + "\t");
@@ -27,7 +38,7 @@ class StatsIO {
         }
 
         // Make a .csv file with all results
-        
+
         File fullResults = new File("results/" + SortingPerformance.RESULTS_FOLDER + "/" + "FullResults.csv");
         Boolean fullFileExists = fullResults.exists();
 
