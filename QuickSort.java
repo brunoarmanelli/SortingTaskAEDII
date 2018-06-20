@@ -36,12 +36,13 @@ class QuickSort {
         while (i <= j) {
             while(arr[i].roomID < pivot.roomID) {
                 i++;
+                this.counter.comparisons++;
             }
             while(arr[j].roomID > pivot.roomID) {
                 j--;
+                this.counter.comparisons++;
             }
 
-            this.counter.comparisons++;
             if (i <= j) {
                 this.counter.swaps++;
                 Room temp = arr[i];
