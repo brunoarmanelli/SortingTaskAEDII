@@ -46,6 +46,12 @@ class SortingPerformance {
 
             // 1 means Random; 2 means Ascending; 3 means Descending;
 
+            // Patruno Sort
+            SecondStepRunner.patrunoTask(0, orderValues[i], path + fileName[0]);
+            SecondStepRunner.patrunoTask(1, orderValues[i], path + fileName[1]);
+            SecondStepRunner.patrunoTask(2, orderValues[i], path + fileName[2]);
+            System.out.println();
+
             // Bubble Sort
             SecondStepRunner.bubbleSortTask(0, orderValues[i], path + fileName[0]);
             SecondStepRunner.bubbleSortTask(1, orderValues[i], path + fileName[1]);
@@ -62,12 +68,6 @@ class SortingPerformance {
             SecondStepRunner.mergeTask(0, orderValues[i], path + fileName[0]);
             SecondStepRunner.mergeTask(1, orderValues[i], path + fileName[1]);
             SecondStepRunner.mergeTask(2, orderValues[i], path + fileName[2]);
-            System.out.println();
-
-            // Patruno Sort
-            SecondStepRunner.patrunoTask(0, orderValues[i], path + fileName[0]);
-            SecondStepRunner.patrunoTask(1, orderValues[i], path + fileName[1]);
-            SecondStepRunner.patrunoTask(2, orderValues[i], path + fileName[2]);
             System.out.println();
 
             // Quick Sort
