@@ -1,5 +1,7 @@
 .DS_Store
 .class
+.txt
+.csv
 InsertionSort.class
 BubbleSort.class
 Counter.class
@@ -15,4 +17,3 @@ StatsIO.class
 data/Ascending.txt
 data/Descending.txt
 data/Random.txt
-results/
