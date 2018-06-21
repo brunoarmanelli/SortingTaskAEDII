@@ -18,7 +18,7 @@ class StatsIO {
             PrintWriter printWriter = new PrintWriter(fileWriter);
 
             if(!resultsFileExists) {
-                printWriter.print("SotingType\t");
+                printWriter.print("SortingType\t");
                 printWriter.print("LineLimit\t");
                 printWriter.print("Swaps\t");
                 printWriter.print("Comparisons\t");
@@ -48,7 +48,7 @@ class StatsIO {
 
             if(!fullFileExists) {
                 printWriter.print("Method; ");
-                printWriter.print("SotingType; ");
+                printWriter.print("SortingType; ");
                 printWriter.print("LineLimit; ");
                 printWriter.print("Swaps; ");
                 printWriter.print("Comparisons; ");
