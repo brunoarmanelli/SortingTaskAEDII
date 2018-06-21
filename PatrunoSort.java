@@ -38,7 +38,6 @@ class PatrunoSort {
 						allData[j] = allData[last];
 						allData[last] = aux;
                         last--;
-                        j += 3;
 					}
                 }
             }
